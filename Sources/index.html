@@ -1,0 +1,69 @@
+<!doctype html>
+
+<html lang="en-us">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title>Parsing DICOM using WebAssembly</title>
+  </head>
+  <body>
+    <h1>Parsing DICOM using WebAssembly</h1>
+
+    <ul>
+      <li>
+        This demonstration is entirely run <b>client-side</b> by the
+        Web browser using the <a href="http://webassembly.org/"
+        target="_blank">WebAssembly</a> technology.
+      </li>
+      <li>
+        The DICOM parsing is fully implemented in C++ using the
+        industrial-grade
+        <a href="http://dicom.offis.de/dcmtk.php.en"
+        target="_blank">DCMTK toolkit</a>.
+      </li>
+      <li>
+        The JavaScript code contains no intelligence about DICOM. It
+        just acts as a wrapper to upload the DICOM file to the C++
+        code.
+      </li>
+      <li>
+        Make sure that <a href="http://caniuse.com/#feat=wasm"
+                          target="_blank">your browser supports
+                          WebAssembly</a>. Mozilla Firefox 52, Google
+                          Chrome 57 and Microsoft Edge 15 are known to
+                          work.
+      </li>
+      <li>
+        This sample is provided courtesy of <a href="http://osimis.io/"
+                                               target="_blank">Osimis</a>.
+      </li>
+    </ul>
+    
+    <h2>Upload some DICOM file</h2>
+
+    <form id="upload" action="POST">
+      <p>
+        <label for="dicom">Selected file:</label>
+        <input type="file" id="dicom" />
+      </p>
+      <p>
+        <input type="checkbox" id="private" />Show private tags
+      </p>
+      <p>
+        <input type="checkbox" id="non-strings" />Show non-string tags
+      </p>
+      <p><input type="submit" value="Parse file" /></p>
+    </form>
+
+    <h2>DICOM headers</h2>
+
+    <pre id="headers"></pre>
+
+    <h2>DICOM tags</h2>
+
+    <pre id="tags"></pre>
+
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" async src="parser.js"></script>
+  </body>
+</html>
