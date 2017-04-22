@@ -1,7 +1,7 @@
 # Parsing DICOM using WebAssembly
 
 This repository contains a sample showing how
-[WebAssembly](http://webassembly.org/) can be used to implement the
+[WebAssembly](http://webassembly.org/) (`.wasm`) can be used to implement the
 parsing of DICOM files client-side, i.e. directly by a Web browser. [DICOM](https://en.wikipedia.org/wiki/DICOM)
 is the standard file format for medical imaging. The DICOM parser is
 entirely written in C++ using the industrial-grade [DCMTK toolkit](http://dicom.offis.de/dcmtk.php.en).
