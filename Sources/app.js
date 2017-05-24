@@ -109,3 +109,8 @@ var Module = {
   },
   totalDependencies: 0
 };
+
+
+if (!('WebAssembly' in window)) {
+  alert('Sorry, your browser does not support WebAssembly :(');
+}
